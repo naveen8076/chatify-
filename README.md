@@ -15,7 +15,7 @@ It provides a modern, fast, and private chatting experience with a clean, respon
 ✅ **Online Status Tracking** – Know who’s active or offline  
 ✅ **Modern UI** – Sleek, dark, and responsive design built with TailwindCSS  
 ✅ **Contacts System** – Add and view chat partners easily  
-✅ **AI Assistant (Optional)** – Extend BuzzChat with ChatGPT or custom AI responses  
+
 
 ---
 
@@ -29,7 +29,6 @@ It provides a modern, fast, and private chatting experience with a clean, respon
 | **Realtime** | Socket.IO |
 | **Auth** | JWT + Cookies |
 | **Media Storage** | Cloudinary |
-| **Hosting** | Vercel (Frontend), Render (Backend) |
 
 ---
 
