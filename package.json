@@ -19,6 +19,9 @@
   "homepage": "https://github.com/naveen8076/chatify-#readme",
   "description": "",
   "dependencies": {
+    "@arcjet/inspect": "^1.0.0-beta.13",
+    "@arcjet/node": "^1.0.0-beta.13",
+    "jsonwebtoken": "^9.0.2",
     "mongoose": "^8.19.1"
   }
 }
