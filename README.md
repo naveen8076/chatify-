@@ -35,14 +35,10 @@ It provides a modern, fast, and private chatting experience with a clean, respon
 
 ## 🖼️ Screenshots
 
-### 🪄 Login Page
-![Login Page](./public/screenshots/login.png)
+![Login Page](./frontend/public/screenshots/login.png)
+![Signup Page](./frontend/public/screenshots/signup.png)
+![Chat Screen](./frontend/public/screenshots/chat.png)
 
-### ✨ Signup Page
-![Signup Page](./public/screenshots/signup.png)
-
-### 💬 Chat Window
-![Chat Screen](./public/screenshots/chat.png)
 
 ---
 
