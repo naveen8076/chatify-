@@ -3,7 +3,7 @@
 BuzzChat is a **real-time chat web application** built using the **MERN stack (MongoDB, Express.js, React, Node.js)** and **Socket.IO** for instant messaging.  
 It provides a modern, fast, and private chatting experience with a clean, responsive UI.
 
-> 🚀 Developed by **Naveen Gupta**
+> 🚀 Developed by **Naveen**
 
 ---
 
