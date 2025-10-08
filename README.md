@@ -46,22 +46,22 @@ It provides a modern, fast, and private chatting experience with a clean, respon
 BuzzChat/
 │
 ├── backend/
-│ ├── src/
-│ │ ├── controllers/
-│ │ ├── models/
-│ │ ├── routes/
-│ │ ├── middleware/
-│ │ └── server.js
-│ ├── .env
-│ └── package.json
+│   ├── src/
+│   │   ├── controllers/
+│   │   ├── models/
+│   │   ├── routes/
+│   │   ├── middleware/
+│   │   └── server.js
+│   ├── .env
+│   └── package.json
 │
 ├── frontend/
-│ ├── src/
-│ │ ├── components/
-│ │ ├── pages/
-│ │ ├── store/
-│ │ └── App.jsx
-│ ├── public/
-│ └── package.json
+│   ├── src/
+│   │   ├── components/
+│   │   ├── pages/
+│   │   ├── store/
+│   │   └── App.jsx
+│   ├── public/
+│   └── package.json
 │
 └── README.md
