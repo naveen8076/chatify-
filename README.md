@@ -43,6 +43,7 @@ It provides a modern, fast, and private chatting experience with a clean, respon
 
 ## 🧩 Folder Structure
 
+```
 BuzzChat/
 │
 ├── backend/
@@ -65,3 +66,4 @@ BuzzChat/
 │   └── package.json
 │
 └── README.md
+```
