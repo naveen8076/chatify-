@@ -14,18 +14,23 @@ function SignUpPage() {
   };
 
   return (
-    <div className="w-full flex items-center justify-center p-4 bg-slate-900">
+    <div className="w-full flex items-center justify-center p-4 bg-[#0b0b0b]">
       <div className="relative w-full max-w-6xl md:h-[800px] h-[650px]">
         <BorderAnimatedContainer>
           <div className="w-full flex flex-col md:flex-row">
-            {/* FORM CLOUMN - LEFT SIDE */}
-            <div className="md:w-1/2 p-8 flex items-center justify-center md:border-r border-slate-600/30">
+            {/* FORM COLUMN - LEFT SIDE */}
+            <div className="md:w-1/2 p-8 flex items-center justify-center md:border-r border-[#2b2b2b] bg-[#111111]/70 backdrop-blur-sm">
               <div className="w-full max-w-md">
                 {/* HEADING TEXT */}
                 <div className="text-center mb-8">
-                  <MessageCircleIcon className="w-12 h-12 mx-auto text-slate-400 mb-4" />
-                  <h2 className="text-2xl font-bold text-slate-200 mb-2">Create Account</h2>
-                  <p className="text-slate-400">Sign up for a new account</p>
+                  <MessageCircleIcon className="w-12 h-12 mx-auto text-amber-400 mb-4" />
+                  <h2 className="text-3xl font-bold text-amber-300 mb-2 tracking-wide">
+                    BuzzChat
+                  </h2>
+                  <h3 className="text-xl font-semibold text-amber-200 mb-1">
+                    Create Account
+                  </h3>
+                  <p className="text-[#d1d1d1]">Join the premium experience</p>
                 </div>
 
                 {/* FORM */}
@@ -39,9 +44,11 @@ function SignUpPage() {
                       <input
                         type="text"
                         value={formData.fullName}
-                        onChange={(e) => setFormData({ ...formData, fullName: e.target.value })}
+                        onChange={(e) =>
+                          setFormData({ ...formData, fullName: e.target.value })
+                        }
                         className="input"
-                        placeholder="Naveen"
+                        placeholder="Naveen Gupta"
                       />
                     </div>
                   </div>
@@ -55,9 +62,11 @@ function SignUpPage() {
                       <input
                         type="email"
                         value={formData.email}
-                        onChange={(e) => setFormData({ ...formData, email: e.target.value })}
+                        onChange={(e) =>
+                          setFormData({ ...formData, email: e.target.value })
+                        }
                         className="input"
-                        placeholder="Naveen@gmail.com"
+                        placeholder="naveen@gmail.com"
                       />
                     </div>
                   </div>
@@ -71,7 +80,9 @@ function SignUpPage() {
                       <input
                         type="password"
                         value={formData.password}
-                        onChange={(e) => setFormData({ ...formData, password: e.target.value })}
+                        onChange={(e) =>
+                          setFormData({ ...formData, password: e.target.value })
+                        }
                         className="input"
                         placeholder="Enter your password"
                       />
@@ -88,6 +99,7 @@ function SignUpPage() {
                   </button>
                 </form>
 
+                {/* LOGIN LINK */}
                 <div className="mt-6 text-center">
                   <Link to="/login" className="auth-link">
                     Already have an account? Login
@@ -97,19 +109,21 @@ function SignUpPage() {
             </div>
 
             {/* FORM ILLUSTRATION - RIGHT SIDE */}
-            <div className="hidden md:w-1/2 md:flex items-center justify-center p-6 bg-gradient-to-bl from-slate-800/20 to-transparent">
+            <div className="hidden md:w-1/2 md:flex items-center justify-center p-6 bg-gradient-to-bl from-[#1a1a1a] to-transparent">
               <div>
                 <img
                   src="/signup.png"
-                  alt="People using mobile devices"
+                  alt="BuzzChat signup illustration"
                   className="w-full h-auto object-contain"
                 />
                 <div className="mt-6 text-center">
-                  <h3 className="text-xl font-medium text-cyan-400">Start Your Journey Today</h3>
+                  <h3 className="text-xl font-medium text-amber-400">
+                    Start Your Journey with BuzzChat
+                  </h3>
 
                   <div className="mt-4 flex justify-center gap-4">
                     <span className="auth-badge">Free</span>
-                    <span className="auth-badge">Easy Setup</span>
+                    <span className="auth-badge">Secure</span>
                     <span className="auth-badge">Private</span>
                   </div>
                 </div>

@@ -1,13 +1,10 @@
-import React from 'react';
-
+import React, { useEffect } from "react";
 import { Navigate, Route, Routes } from "react-router";
 import ChatPage from "./pages/ChatPage";
 import LoginPage from "./pages/LoginPage";
 import SignUpPage from "./pages/SignUpPage";
 import { useAuthStore } from "./store/useAuthStore";
-import { useEffect } from "react";
 import PageLoader from "./components/PageLoader";
-
 import { Toaster } from "react-hot-toast";
 
 function App() {
@@ -20,21 +17,44 @@ function App() {
   if (isCheckingAuth) return <PageLoader />;
 
   return (
-    <div className="min-h-screen bg-slate-900 relative flex items-center justify-center p-4 overflow-hidden">
+    <div className="min-h-screen bg-[#0b0b0b] relative flex items-center justify-center p-4 overflow-hidden">
       {/* DECORATORS - GRID BG & GLOW SHAPES */}
-      <div className="absolute inset-0 bg-[linear-gradient(to_right,#4f4f4f2e_1px,transparent_1px),linear-gradient(to_bottom,#4f4f4f2e_1px,transparent_1px)] bg-[size:14px_24px]" />
-      <div className="absolute top-0 -left-4 size-96 bg-pink-500 opacity-20 blur-[100px]" />
-      <div className="absolute bottom-0 -right-4 size-96 bg-cyan-500 opacity-20 blur-[100px]" />
 
+      {/* Subtle gold grid background */}
+      <div
+        className="absolute inset-0"
+        style={{
+          background:
+            "linear-gradient(to right, rgba(255,215,0,0.08) 1px, transparent 1px), linear-gradient(to bottom, rgba(255,215,0,0.05) 1px, transparent 1px)",
+          backgroundSize: "14px 24px",
+        }}
+      />
+
+      {/* Top-left gold glow */}
+      <div className="absolute top-0 -left-6 size-96 bg-amber-500 opacity-25 blur-[120px]" />
+
+      {/* Bottom-right rich golden glow */}
+      <div className="absolute bottom-0 -right-6 size-96 bg-yellow-500 opacity-25 blur-[120px]" />
+
+      {/* ROUTES */}
       <Routes>
         <Route path="/" element={authUser ? <ChatPage /> : <Navigate to={"/login"} />} />
         <Route path="/login" element={!authUser ? <LoginPage /> : <Navigate to={"/"} />} />
         <Route path="/signup" element={!authUser ? <SignUpPage /> : <Navigate to={"/"} />} />
       </Routes>
 
-      <Toaster />
+      {/* TOASTER */}
+      <Toaster
+        toastOptions={{
+          style: {
+            background: "#1c1c1c",
+            color: "#f5d776",
+            border: "1px solid #3b2f0b",
+          },
+        }}
+      />
     </div>
   );
 }
-export default App;
 
+export default App;

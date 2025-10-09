@@ -1,7 +1,14 @@
-import { defineConfig } from 'vite'
-import react from '@vitejs/plugin-react'
+import { defineConfig } from "vite";
+import react from "@vitejs/plugin-react";
 
-// https://vite.dev/config/
 export default defineConfig({
   plugins: [react()],
-})
+  define: {
+    // replace `global` with `globalThis` during build
+    global: "globalThis",
+  },
+  // optional: help Vite pre-bundle problematic deps
+  optimizeDeps: {
+    include: ["simple-peer", "randombytes"],
+  },
+});

@@ -27,22 +27,22 @@ function ProfileHeader() {
   };
 
   return (
-    <div className="p-6 border-b border-slate-700/50">
+    <div className="p-6 border-b border-[#2b2b2b] bg-[#0f0f0f]/60 backdrop-blur-sm">
       <div className="flex items-center justify-between">
         <div className="flex items-center gap-3">
           {/* AVATAR */}
           <div className="avatar online">
             <button
-              className="size-14 rounded-full overflow-hidden relative group"
+              className="size-14 rounded-full overflow-hidden relative group ring-1 ring-amber-600/30 hover:ring-amber-500/50 transition-all duration-300"
               onClick={() => fileInputRef.current.click()}
             >
               <img
-                src={selectedImg || authUser.profilePic || "/avatar.png"}
+                src={selectedImg || authUser.profilePic || '/avatar.png'}
                 alt="User image"
                 className="size-full object-cover"
               />
-              <div className="absolute inset-0 bg-black/50 opacity-0 group-hover:opacity-100 flex items-center justify-center transition-opacity">
-                <span className="text-white text-xs">Change</span>
+              <div className="absolute inset-0 bg-black/60 opacity-0 group-hover:opacity-100 flex items-center justify-center transition-opacity">
+                <span className="text-amber-300 text-xs font-medium">Change</span>
               </div>
             </button>
 
@@ -55,35 +55,37 @@ function ProfileHeader() {
             />
           </div>
 
-          {/* USERNAME & ONLINE TEXT */}
+          {/* USERNAME & STATUS */}
           <div>
-            <h3 className="text-slate-200 font-medium text-base max-w-[180px] truncate">
+            <h3 className="text-amber-300 font-semibold text-base max-w-[180px] truncate">
               {authUser.fullName}
             </h3>
-
-            <p className="text-slate-400 text-xs">Online</p>
+            <p className="text-[#c4c4c4] text-xs tracking-wide">Online</p>
           </div>
         </div>
 
         {/* BUTTONS */}
         <div className="flex gap-4 items-center">
-          {/* LOGOUT BTN */}
+          {/* LOGOUT */}
           <button
-            className="text-slate-400 hover:text-slate-200 transition-colors"
+            className="text-[#a8a8a8] hover:text-amber-400 transition-colors"
             onClick={logout}
+            title="Logout"
           >
             <LogOutIcon className="size-5" />
           </button>
 
-          {/* SOUND TOGGLE BTN */}
+          {/* SOUND TOGGLE */}
           <button
-            className="text-slate-400 hover:text-slate-200 transition-colors"
+            className="text-[#a8a8a8] hover:text-amber-400 transition-colors"
             onClick={() => {
-              // play click sound before toggling
-              mouseClickSound.currentTime = 0; // reset to start
-              mouseClickSound.play().catch((error) => console.log("Audio play failed:", error));
+              mouseClickSound.currentTime = 0;
+              mouseClickSound.play().catch((error) =>
+                console.log("Audio play failed:", error)
+              );
               toggleSound();
             }}
+            title="Toggle Sound"
           >
             {isSoundEnabled ? (
               <Volume2Icon className="size-5" />

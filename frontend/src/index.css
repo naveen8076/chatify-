@@ -8,28 +8,55 @@
   syntax: "<angle>";
 }
 
+/* INPUT FIELD */
 .input {
-  @apply w-full bg-slate-800/50 border border-slate-700 rounded-lg py-2 pl-10 pr-4 text-slate-200 placeholder-slate-400 focus:ring-2 focus:ring-cyan-500 focus:border-transparent;
+  @apply w-full bg-[#1a1a1a]/60 border border-[#2b2b2b] rounded-lg py-2 pl-10 pr-4
+  text-[#f5f5f5] placeholder-[#aaa] focus:ring-2 focus:ring-amber-500 focus:border-transparent;
 }
 
+/* INPUT ICON */
 .auth-input-icon {
-  @apply absolute left-3 top-1/2 -translate-y-1/2 text-slate-400 size-5;
+  @apply absolute left-3 top-1/2 -translate-y-1/2 text-[#d1b464] size-5;
 }
 
+/* LABEL */
 .auth-input-label {
-  @apply block text-sm font-medium text-slate-300 mb-2;
+  @apply block text-sm font-medium text-[#d6d6d6] mb-2;
 }
 
+/* BADGES (Gold tone) */
 .auth-badge {
-  @apply inline-flex items-center px-3 py-1 text-xs font-medium rounded-full bg-cyan-500/20 text-cyan-300;
+  @apply inline-flex items-center px-3 py-1 text-xs font-medium rounded-full
+  bg-amber-500/20 text-amber-300;
 }
 
+/* BUTTON (Gold accent) */
 .auth-btn {
-  @apply w-full bg-cyan-500 text-white rounded-lg py-2.5 font-medium
-  hover:bg-cyan-600 focus:ring-2 focus:ring-cyan-500;
+  @apply w-full bg-amber-500 text-black rounded-lg py-2.5 font-semibold
+  hover:bg-amber-400 focus:ring-2 focus:ring-amber-500;
 }
 
+/* LINK (Subtle gold glow) */
 .auth-link {
-  @apply px-4 py-2 inline-block bg-cyan-500/10 rounded-lg text-cyan-400
-  hover:text-cyan-500 text-sm transition-colors;
+  @apply px-4 py-2 inline-block bg-amber-500/10 rounded-lg text-amber-300
+  hover:text-amber-400 text-sm transition-colors;
+}
+
+/* (Optional) Add a luxury-style glow for focus elements */
+.focus-glow {
+  box-shadow: 0 0 15px rgba(251, 191, 36, 0.3);
+}
+
+/* Scrollbar: subtle golden accent */
+::-webkit-scrollbar {
+  width: 10px;
+}
+::-webkit-scrollbar-track {
+  background: transparent;
+}
+::-webkit-scrollbar-thumb {
+  background: linear-gradient(180deg, #b08933 0%, #e9b949 100%);
+  border-radius: 999px;
+  border: 2px solid transparent;
+  background-clip: padding-box;
 }

@@ -14,18 +14,23 @@ function LoginPage() {
   };
 
   return (
-    <div className="w-full flex items-center justify-center p-4 bg-slate-900">
+    <div className="w-full flex items-center justify-center p-4 bg-[#0b0b0b]">
       <div className="relative w-full max-w-6xl md:h-[800px] h-[650px]">
         <BorderAnimatedContainer>
           <div className="w-full flex flex-col md:flex-row">
-            {/* FORM CLOUMN - LEFT SIDE */}
-            <div className="md:w-1/2 p-8 flex items-center justify-center md:border-r border-slate-600/30">
+            {/* FORM COLUMN - LEFT SIDE */}
+            <div className="md:w-1/2 p-8 flex items-center justify-center md:border-r border-[#2b2b2b] bg-[#111111]/70 backdrop-blur-sm">
               <div className="w-full max-w-md">
                 {/* HEADING TEXT */}
                 <div className="text-center mb-8">
-                  <MessageCircleIcon className="w-12 h-12 mx-auto text-slate-400 mb-4" />
-                  <h2 className="text-2xl font-bold text-slate-200 mb-2">Welcome Back</h2>
-                  <p className="text-slate-400">Login to access to your account</p>
+                  <MessageCircleIcon className="w-12 h-12 mx-auto text-amber-400 mb-4" />
+                  <h2 className="text-3xl font-bold text-amber-300 mb-2 tracking-wide">
+                    BuzzChat
+                  </h2>
+                  <h3 className="text-xl font-semibold text-amber-200 mb-1">
+                    Welcome Back
+                  </h3>
+                  <p className="text-[#d1d1d1]">Login to access your account</p>
                 </div>
 
                 {/* FORM */}
@@ -35,13 +40,14 @@ function LoginPage() {
                     <label className="auth-input-label">Email</label>
                     <div className="relative">
                       <MailIcon className="auth-input-icon" />
-
                       <input
                         type="email"
                         value={formData.email}
-                        onChange={(e) => setFormData({ ...formData, email: e.target.value })}
+                        onChange={(e) =>
+                          setFormData({ ...formData, email: e.target.value })
+                        }
                         className="input"
-                        placeholder="johndoe@gmail.com"
+                        placeholder="naveen@gmail.com"
                       />
                     </div>
                   </div>
@@ -51,11 +57,12 @@ function LoginPage() {
                     <label className="auth-input-label">Password</label>
                     <div className="relative">
                       <LockIcon className="auth-input-icon" />
-
                       <input
                         type="password"
                         value={formData.password}
-                        onChange={(e) => setFormData({ ...formData, password: e.target.value })}
+                        onChange={(e) =>
+                          setFormData({ ...formData, password: e.target.value })
+                        }
                         className="input"
                         placeholder="Enter your password"
                       />
@@ -72,28 +79,31 @@ function LoginPage() {
                   </button>
                 </form>
 
+                {/* SIGNUP LINK */}
                 <div className="mt-6 text-center">
                   <Link to="/signup" className="auth-link">
-                    Don't have an account? Sign Up
+                    Don’t have an account? Sign Up
                   </Link>
                 </div>
               </div>
             </div>
 
             {/* FORM ILLUSTRATION - RIGHT SIDE */}
-            <div className="hidden md:w-1/2 md:flex items-center justify-center p-6 bg-gradient-to-bl from-slate-800/20 to-transparent">
+            <div className="hidden md:w-1/2 md:flex items-center justify-center p-6 bg-gradient-to-bl from-[#1a1a1a] to-transparent">
               <div>
                 <img
                   src="/login.png"
-                  alt="People using mobile devices"
+                  alt="BuzzChat login illustration"
                   className="w-full h-auto object-contain"
                 />
                 <div className="mt-6 text-center">
-                  <h3 className="text-xl font-medium text-cyan-400">Connect anytime, anywhere</h3>
+                  <h3 className="text-xl font-medium text-amber-400">
+                    Connect Anytime, Anywhere
+                  </h3>
 
                   <div className="mt-4 flex justify-center gap-4">
                     <span className="auth-badge">Free</span>
-                    <span className="auth-badge">Easy Setup</span>
+                    <span className="auth-badge">Secure</span>
                     <span className="auth-badge">Private</span>
                   </div>
                 </div>
