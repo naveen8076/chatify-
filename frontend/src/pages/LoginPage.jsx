@@ -14,23 +14,23 @@ function LoginPage() {
   };
 
   return (
-    <div className="w-full flex items-center justify-center p-4 bg-[#0b0b0b]">
-      <div className="relative w-full max-w-6xl md:h-[800px] h-[650px]">
+    // Fill viewport and center card vertically + horizontally
+    <div className="min-h-screen flex items-center justify-center p-4 bg-[#0b0b0b]">
+      {/* Card container: responsive two-column layout, constrained width */}
+      <div className="w-full max-w-6xl mx-4">
         <BorderAnimatedContainer>
-          <div className="w-full flex flex-col md:flex-row">
+          {/* Grid makes left (form) and right (illustration) equal height */}
+          <div className="w-full grid grid-cols-1 md:grid-cols-2 gap-0 h-full">
             {/* FORM COLUMN - LEFT SIDE */}
-            <div className="md:w-1/2 p-8 flex items-center justify-center md:border-r border-[#2b2b2b] bg-[#111111]/70 backdrop-blur-sm">
+            <div className="flex items-center justify-center md:border-r border-[#2b2b2b] bg-[#111111]/70 backdrop-blur-sm p-6 md:p-12">
               <div className="w-full max-w-md">
                 {/* HEADING TEXT */}
-                <div className="text-center mb-8">
-                  <MessageCircleIcon className="w-12 h-12 mx-auto text-amber-400 mb-4" />
-                  <h2 className="text-3xl font-bold text-amber-300 mb-2 tracking-wide">
-                    BuzzChat
-                  </h2>
-                  <h3 className="text-xl font-semibold text-amber-200 mb-1">
-                    Welcome Back
-                  </h3>
-                  <p className="text-[#d1d1d1]">Login to access your account</p>
+                <div className="text-center mb-6 relative">
+                  <div className="absolute -top-4 left-1/2 -translate-x-1/2 size-14 rounded-full blur-2xl bg-amber-500/20" />
+                  <MessageCircleIcon className="w-12 h-12 mx-auto text-amber-400 mb-3 drop-shadow-[0_8px_24px_rgba(245,158,11,0.45)]" />
+                  <h2 className="auth-heading mb-1">BuzzChat</h2>
+                  <h3 className="text-lg font-semibold text-amber-200">Welcome Back</h3>
+                  <p className="text-[#d1d1d1]/90 mt-1">Login to access your account</p>
                 </div>
 
                 {/* FORM */}
@@ -80,7 +80,7 @@ function LoginPage() {
                 </form>
 
                 {/* SIGNUP LINK */}
-                <div className="mt-6 text-center">
+                <div className="text-center mt-4">
                   <Link to="/signup" className="auth-link">
                     Don’t have an account? Sign Up
                   </Link>
@@ -89,12 +89,12 @@ function LoginPage() {
             </div>
 
             {/* FORM ILLUSTRATION - RIGHT SIDE */}
-            <div className="hidden md:w-1/2 md:flex items-center justify-center p-6 bg-gradient-to-bl from-[#1a1a1a] to-transparent">
-              <div>
+            <div className="hidden md:flex items-center justify-center p-6 bg-gradient-to-bl from-[#1a1a1a] to-transparent">
+              <div className="w-full max-w-md flex flex-col items-center justify-center">
                 <img
                   src="/login.png"
                   alt="BuzzChat login illustration"
-                  className="w-full h-auto object-contain"
+                  className="w-full h-auto object-contain max-h-[70vh]"
                 />
                 <div className="mt-6 text-center">
                   <h3 className="text-xl font-medium text-amber-400">

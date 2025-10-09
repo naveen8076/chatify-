@@ -2,61 +2,76 @@
 @tailwind components;
 @tailwind utilities;
 
+/* Lock the app to the viewport and remove outer scrollbars */
+html, body, #root {
+  height: 100%;
+}
+
+body {
+  margin: 0; /* ensure no default margins create scrollbars */
+  overflow: hidden; /* prevent vertical and horizontal scrolling */
+  background-color: #0b0b0b; /* match app background to avoid flashes */
+}
+
+/* Reusable thin scrollbar for scrollable panels */
+.scroll-area {
+  scrollbar-width: thin; /* Firefox */
+  scrollbar-color: rgba(148, 163, 184, 0.4) transparent; /* thumb track */
+}
+
+.scroll-area::-webkit-scrollbar {
+  width: 8px;
+}
+
+.scroll-area::-webkit-scrollbar-track {
+  background: transparent;
+}
+
+.scroll-area::-webkit-scrollbar-thumb {
+  background-color: rgba(148, 163, 184, 0.35); /* slate-400 */
+  border-radius: 9999px;
+}
+
+.scroll-area::-webkit-scrollbar-thumb:hover {
+  background-color: rgba(14, 165, 233, 0.6); /* cyan-500 on hover */
+}
+
 @property --border-angle {
   inherits: false;
   initial-value: 0deg;
   syntax: "<angle>";
 }
 
-/* INPUT FIELD */
 .input {
-  @apply w-full bg-[#1a1a1a]/60 border border-[#2b2b2b] rounded-lg py-2 pl-10 pr-4
-  text-[#f5f5f5] placeholder-[#aaa] focus:ring-2 focus:ring-amber-500 focus:border-transparent;
+  @apply w-full bg-slate-800/60 border border-slate-700/70 rounded-xl py-3 pl-11 pr-4 text-slate-200 placeholder-slate-400 shadow-[0_0_0_0_rgba(0,0,0,0)]
+  transition-all duration-200 ease-out focus:ring-2 focus:ring-cyan-500/70 focus:border-cyan-400/40 focus:shadow-[0_0_0_6px_rgba(8,145,178,0.08)];
 }
 
-/* INPUT ICON */
 .auth-input-icon {
-  @apply absolute left-3 top-1/2 -translate-y-1/2 text-[#d1b464] size-5;
+  @apply absolute left-3.5 top-1/2 -translate-y-1/2 text-slate-400 size-5;
 }
 
-/* LABEL */
 .auth-input-label {
-  @apply block text-sm font-medium text-[#d6d6d6] mb-2;
+  @apply block text-xs tracking-wide uppercase text-slate-400 mb-2;
 }
 
-/* BADGES (Gold tone) */
 .auth-badge {
-  @apply inline-flex items-center px-3 py-1 text-xs font-medium rounded-full
-  bg-amber-500/20 text-amber-300;
+  @apply inline-flex items-center px-3 py-1 text-xs font-medium rounded-full bg-cyan-500/15 text-cyan-300 ring-1 ring-cyan-500/30 shadow-[0_0_20px_rgba(8,145,178,0.15)];
 }
 
-/* BUTTON (Gold accent) */
 .auth-btn {
-  @apply w-full bg-amber-500 text-black rounded-lg py-2.5 font-semibold
-  hover:bg-amber-400 focus:ring-2 focus:ring-amber-500;
+  @apply w-full bg-cyan-500 text-white rounded-xl py-3 font-semibold tracking-wide
+  hover:bg-cyan-600 focus:ring-2 focus:ring-cyan-500 shadow-[0_10px_30px_-10px_rgba(8,145,178,0.6)] transition-colors;
 }
 
-/* LINK (Subtle gold glow) */
 .auth-link {
-  @apply px-4 py-2 inline-block bg-amber-500/10 rounded-lg text-amber-300
-  hover:text-amber-400 text-sm transition-colors;
+  @apply px-4 py-2 inline-block bg-cyan-500/10 rounded-lg text-cyan-300 hover:text-cyan-400 text-sm transition-colors;
 }
 
-/* (Optional) Add a luxury-style glow for focus elements */
-.focus-glow {
-  box-shadow: 0 0 15px rgba(251, 191, 36, 0.3);
+/* Fancy heading accent for auth pages */
+.auth-heading {
+  @apply text-3xl font-extrabold text-amber-300 tracking-wide drop-shadow-[0_4px_24px_rgba(245,158,11,0.35)];
 }
-
-/* Scrollbar: subtle golden accent */
-::-webkit-scrollbar {
-  width: 10px;
-}
-::-webkit-scrollbar-track {
-  background: transparent;
-}
-::-webkit-scrollbar-thumb {
-  background: linear-gradient(180deg, #b08933 0%, #e9b949 100%);
-  border-radius: 999px;
-  border: 2px solid transparent;
-  background-clip: padding-box;
+.auth-subheading {
+  @apply text-sm text-amber-200/90 font-medium;
 }
