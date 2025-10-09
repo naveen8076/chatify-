@@ -1,5 +1,6 @@
 // frontend/src/lib/axios.js
 import axios from "axios";
+export const axiosInstance = api; // backward compatibility alias
 
 const API_RAW = import.meta.env.VITE_API_URL || "http://localhost:5000"; // e.g. https://buzzchat-29gn.onrender.com/api
 export const API_BASE = API_RAW.replace(/\/$/, "");        // remove trailing slash
