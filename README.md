@@ -31,16 +31,6 @@ It provides a modern, fast, and private chatting experience with a clean, respon
 | **Auth** | JWT + Cookies |
 | **Media Storage** | Cloudinary |
 
----
-
-## 🖼️ Screenshots
-
-![Login Page](./frontend/public/screenshots/login.png)
-![Signup Page](./frontend/public/screenshots/signup.png)
-![Chat Screen](./frontend/public/screenshots/chat.png)
-
-
----
 
 ## 🧩 Folder Structure
 
@@ -217,6 +207,3 @@ npm run build
 - Socket connection issues: Confirm backend port and path, and that auth middleware accepts the client token
 - Emails not sending: Verify RESEND_API_KEY and sending domain settings
 
-## License
-This project is for learning/demo purposes. Add your preferred license if publishing.
->>>>>>> 832e17c (Save current local changes before rebase)
