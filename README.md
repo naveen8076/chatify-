@@ -1,4 +1,3 @@
-<<<<<<< HEAD
 # 💬 BuzzChat
 
 BuzzChat is a **real-time chat web application** built using the **MERN stack (MongoDB, Express.js, React, Node.js)** and **Socket.IO** for instant messaging.  
